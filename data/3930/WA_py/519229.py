@@ -1,0 +1,20 @@
+# coding=utf-8
+n = input()
+n = int(n)
+for i in range(n):
+    data = input()
+    data = int(data)
+    a = data//100
+    b = data%100//50
+    c = data%50//20
+    d = data%20//10
+    e = data%10//5
+    f = data%5//2
+    g = data%2
+    print(g,end=' ')
+    print(f,end=' ')
+    print(e,end=' ')
+    print(d,end=' ')
+    print(c,end=' ')
+    print(b,end=' ')
+    print(a,end=' ')

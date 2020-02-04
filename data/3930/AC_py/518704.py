@@ -1,0 +1,19 @@
+# coding=utf-8
+n=int(input())
+i=0
+while i<=n:
+    m=int(input())
+    s100=m//100
+    s=m-(m//100)*100
+    s50=s//50
+    p=s-(s//50)*50
+    s20=p//20
+    q=p-20*s20
+    s10=q//10
+    m=q-10*s10
+    s5=m//5
+    n=m-5*s5
+    s2=n//2
+    o=n-2*s2
+    s1=o
+    print(s1,s2,s5,s10,s20,s50,s100)

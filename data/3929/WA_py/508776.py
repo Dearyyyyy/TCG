@@ -1,0 +1,5 @@
+# coding=utf-8
+#include<iostream>#include<cstdio>struct Penalty//罚时结构体 {	int hour;//罚时的小时数 	int minute;//罚时的分钟数 };int main(){	using namespace std;	int N,m;	int hour,minute;	string s;	char q;	while(cin>>N)//输入N组数据 	{		int AC[24]={0};//判断是否AC数组 		int pen[24]={0};//罚时个数数组，每一个代表20分钟 		Penalty penalty;		penalty.hour=0;//初始化 		penalty.minute=0;//初始化 		while(N--)		{			cin>>hour;			cin.get();//把冒号读走 			cin>>minute;//读取分钟数 			cin>>q;//读取题目号 			cin>>s;//读取OJ返回的状态 			m=q-'A';			if(!AC[m])//判断当前题目是否AC 			{				if(s=="AC")				{					penalty.hour+=hour-18;					penalty.minute+=minute;					AC[m]=1;				}				else					pen[m]++;			}		}		for(int i=0;i<24;i++)//把已经AC的题目的罚时时间加到总时间里面 			if(AC[i])				penalty.minute+=pen[i]*20;		penalty.hour+=penalty.minute/60;		penalty.minute%=60;		printf("%02d:%02d\n",penalty.hour,penalty.minute);	}	return 0;}
+————————————————
+版权声明：本文为CSDN博主「andy豆浆」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_36544682/article/details/80045929
